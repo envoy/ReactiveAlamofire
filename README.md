@@ -4,7 +4,7 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/envoy/ReactiveAlamofire)
 [![GitHub license](https://img.shields.io/github/license/envoy/ReactiveAlamofire.svg)](https://github.com/envoy/ReactiveAlamofire/blob/master/LICENSE)
 
-Alamofire 3 integration for ReactiveCocoa 4
+[Alamofire](https://github.com/Alamofire/Alamofire) 3 integration for [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa) 4
 
 ## Example
 
