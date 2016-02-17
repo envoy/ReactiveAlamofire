@@ -43,7 +43,7 @@ public class ResponseProducerResult: ResponseProducerResultType {
 
 extension ResponseProducerResult: ErrorType {}
 
-extension Alamofire.Request {
+public extension Alamofire.Request {
     /// Producer for generating response
     typealias ResponseProducer = SignalProducer<ResponseProducerResult, ResponseProducerResult>
     

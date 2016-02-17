@@ -13,7 +13,7 @@ import ReactiveCocoa
 
 extension Alamofire.Response: ErrorType {}
 
-extension SignalType where Value: ResponseProducerResultType, Error: ResponseProducerResultType {
+public extension SignalType where Value: ResponseProducerResultType, Error: ResponseProducerResultType {
     /**
         Parse the next response of `self` with given Alamofire ResponseSerializer
          - Parameter responseSerializer: the response serializer to apply on response from self signal
@@ -60,7 +60,7 @@ extension SignalType where Value: ResponseProducerResultType, Error: ResponsePro
 }
 
 
-extension SignalProducerType where Value: ResponseProducerResultType, Error: ResponseProducerResultType {
+public extension SignalProducerType where Value: ResponseProducerResultType, Error: ResponseProducerResultType {
     /**
         Parse the next response of `self` with given Alamofire ResponseSerializer
          - Parameter responseSerializer: the response serializer to apply on responses from `self` SignalProducer
