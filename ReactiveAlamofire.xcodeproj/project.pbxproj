@@ -12,6 +12,8 @@
 		D85795781C74371700C23AF2 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85795771C74371700C23AF2 /* Result.framework */; };
 		D857957A1C74371F00C23AF2 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85795791C74371F00C23AF2 /* Result.framework */; };
 		D857957B1C74375400C23AF2 /* ReactiveAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F54BDB1C741CD800FD6705 /* ReactiveAlamofire.framework */; };
+		D857957D1C7438F100C23AF2 /* SignalProducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D857957C1C7438F100C23AF2 /* SignalProducerTests.swift */; };
+		D85795801C74395D00C23AF2 /* RequestAndParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D857957F1C74395D00C23AF2 /* RequestAndParseTests.swift */; };
 		D8B0029B1C74359A00542367 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B002991C74352700542367 /* Alamofire.framework */; };
 		D8B0029C1C7435A200542367 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B002991C74352700542367 /* Alamofire.framework */; };
 		D8F54BDF1C741CD800FD6705 /* ReactiveAlamofire.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F54BDE1C741CD800FD6705 /* ReactiveAlamofire.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,6 +39,8 @@
 		D85795751C7436DA00C23AF2 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "Carthage/Checkouts/ReactiveCocoa/build/Debug-iphoneos/ReactiveCocoa.framework"; sourceTree = "<group>"; };
 		D85795771C74371700C23AF2 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
 		D85795791C74371F00C23AF2 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
+		D857957C1C7438F100C23AF2 /* SignalProducerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerTests.swift; sourceTree = "<group>"; };
+		D857957F1C74395D00C23AF2 /* RequestAndParseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAndParseTests.swift; sourceTree = "<group>"; };
 		D8B002991C74352700542367 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/ReactiveAlamofire-fnifdyhgcurkpzdecmoartcdcpkg/Build/Products/Debug-iphonesimulator/Alamofire.framework"; sourceTree = "<group>"; };
 		D8F54BDB1C741CD800FD6705 /* ReactiveAlamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveAlamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F54BDE1C741CD800FD6705 /* ReactiveAlamofire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveAlamofire.h; sourceTree = "<group>"; };
@@ -73,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D857957E1C74394100C23AF2 /* Integration */ = {
+			isa = PBXGroup;
+			children = (
+				D857957F1C74395D00C23AF2 /* RequestAndParseTests.swift */,
+			);
+			name = Integration;
+			sourceTree = "<group>";
+		};
 		D8F54BD11C741CD800FD6705 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				D8F54C061C74245700FD6705 /* Core */,
+				D857957E1C74394100C23AF2 /* Integration */,
 				D8F54BEC1C741CD800FD6705 /* Info.plist */,
 			);
 			path = ReactiveAlamofireTests;
@@ -136,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				D8F54C071C74247100FD6705 /* RequestTests.swift */,
+				D857957C1C7438F100C23AF2 /* SignalProducerTests.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -258,6 +272,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8F54C081C74247100FD6705 /* RequestTests.swift in Sources */,
+				D85795801C74395D00C23AF2 /* RequestAndParseTests.swift in Sources */,
+				D857957D1C7438F100C23AF2 /* SignalProducerTests.swift in Sources */,
 				D8F54BF91C741FC200FD6705 /* Request.swift in Sources */,
 				D8F54BFC1C74203500FD6705 /* SignalProducer.swift in Sources */,
 			);
