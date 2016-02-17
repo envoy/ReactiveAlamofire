@@ -48,8 +48,8 @@ extension Alamofire.Request {
     typealias ResponseProducer = SignalProducer<ResponseProducerResult, ResponseProducerResult>
     
     /**
-     Make a SignalProducer for generating response from `self` request and return
-     - Returns: A SignalProducer for generating response from request
+        Make a SignalProducer for generating response from `self` request and return
+         - Returns: A SignalProducer for generating response from request
      */
     func responseProducer() -> SignalProducer<ResponseProducerResult, ResponseProducerResult> {
         return SignalProducer<ResponseProducerResult, ResponseProducerResult> { observer, disposable in
