@@ -15,16 +15,61 @@
             hideIssues = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F8111E3219A95C8B0040E7D1"
+               BuildableName = "Alamofire.framework"
+               BlueprintName = "Alamofire iOS"
+               ReferencedContainer = "container:Carthage/Checkouts/Alamofire/Alamofire.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES"
+            hideIssues = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D047260B19E49F82006002AA"
+               BuildableName = "ReactiveCocoa.framework"
+               BlueprintName = "ReactiveCocoa-iOS"
+               ReferencedContainer = "container:Carthage/Checkouts/ReactiveCocoa/ReactiveCocoa.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES"
+            hideIssues = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D454807C1A957361009D7229"
+               BuildableName = "Result.framework"
+               BlueprintName = "Result-iOS"
+               ReferencedContainer = "container:Carthage/Checkouts/Result/Result.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES"
+            hideIssues = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "D8F54BDA1C741CD800FD6705"
                BuildableName = "ReactiveAlamofire.framework"
-               BlueprintName = "ReactiveAlamofire"
+               BlueprintName = "ReactiveAlamofire-iOS"
                ReferencedContainer = "container:ReactiveAlamofire.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
@@ -35,7 +80,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D8F54BE41C741CD800FD6705"
                BuildableName = "ReactiveAlamofireTests.xctest"
-               BlueprintName = "ReactiveAlamofireTests"
+               BlueprintName = "ReactiveAlamofireTests-iOSTests"
                ReferencedContainer = "container:ReactiveAlamofire.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -45,7 +90,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D8F54BDA1C741CD800FD6705"
             BuildableName = "ReactiveAlamofire.framework"
-            BlueprintName = "ReactiveAlamofire"
+            BlueprintName = "ReactiveAlamofire-iOS"
             ReferencedContainer = "container:ReactiveAlamofire.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -67,7 +112,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D8F54BDA1C741CD800FD6705"
             BuildableName = "ReactiveAlamofire.framework"
-            BlueprintName = "ReactiveAlamofire"
+            BlueprintName = "ReactiveAlamofire-iOS"
             ReferencedContainer = "container:ReactiveAlamofire.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -85,7 +130,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D8F54BDA1C741CD800FD6705"
             BuildableName = "ReactiveAlamofire.framework"
-            BlueprintName = "ReactiveAlamofire"
+            BlueprintName = "ReactiveAlamofire-iOS"
             ReferencedContainer = "container:ReactiveAlamofire.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

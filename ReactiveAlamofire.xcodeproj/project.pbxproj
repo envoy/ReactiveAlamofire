@@ -7,9 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D85795741C7436D000C23AF2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85795731C7436D000C23AF2 /* ReactiveCocoa.framework */; };
+		D85795761C7436DA00C23AF2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85795751C7436DA00C23AF2 /* ReactiveCocoa.framework */; };
+		D85795781C74371700C23AF2 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85795771C74371700C23AF2 /* Result.framework */; };
+		D857957A1C74371F00C23AF2 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85795791C74371F00C23AF2 /* Result.framework */; };
+		D857957B1C74375400C23AF2 /* ReactiveAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F54BDB1C741CD800FD6705 /* ReactiveAlamofire.framework */; };
+		D8B0029B1C74359A00542367 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B002991C74352700542367 /* Alamofire.framework */; };
+		D8B0029C1C7435A200542367 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B002991C74352700542367 /* Alamofire.framework */; };
 		D8F54BDF1C741CD800FD6705 /* ReactiveAlamofire.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F54BDE1C741CD800FD6705 /* ReactiveAlamofire.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D8F54BE61C741CD800FD6705 /* ReactiveAlamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F54BDB1C741CD800FD6705 /* ReactiveAlamofire.framework */; };
-		D8F54BEB1C741CD800FD6705 /* ReactiveAlamofireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F54BEA1C741CD800FD6705 /* ReactiveAlamofireTests.swift */; };
+		D8F54BF81C741FC200FD6705 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F54BF71C741FC200FD6705 /* Request.swift */; };
+		D8F54BF91C741FC200FD6705 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F54BF71C741FC200FD6705 /* Request.swift */; };
+		D8F54BFB1C74203500FD6705 /* SignalProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F54BFA1C74203500FD6705 /* SignalProducer.swift */; };
+		D8F54BFC1C74203500FD6705 /* SignalProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F54BFA1C74203500FD6705 /* SignalProducer.swift */; };
+		D8F54C081C74247100FD6705 /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F54C071C74247100FD6705 /* RequestTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +33,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D85795731C7436D000C23AF2 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "Carthage/Checkouts/ReactiveCocoa/build/Debug-iphoneos/ReactiveCocoa.framework"; sourceTree = "<group>"; };
+		D85795751C7436DA00C23AF2 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "Carthage/Checkouts/ReactiveCocoa/build/Debug-iphoneos/ReactiveCocoa.framework"; sourceTree = "<group>"; };
+		D85795771C74371700C23AF2 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
+		D85795791C74371F00C23AF2 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
+		D8B002991C74352700542367 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/ReactiveAlamofire-fnifdyhgcurkpzdecmoartcdcpkg/Build/Products/Debug-iphonesimulator/Alamofire.framework"; sourceTree = "<group>"; };
 		D8F54BDB1C741CD800FD6705 /* ReactiveAlamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveAlamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F54BDE1C741CD800FD6705 /* ReactiveAlamofire.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveAlamofire.h; sourceTree = "<group>"; };
 		D8F54BE01C741CD800FD6705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8F54BE51C741CD800FD6705 /* ReactiveAlamofireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveAlamofireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8F54BEA1C741CD800FD6705 /* ReactiveAlamofireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveAlamofireTests.swift; sourceTree = "<group>"; };
 		D8F54BEC1C741CD800FD6705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8F54BF71C741FC200FD6705 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		D8F54BFA1C74203500FD6705 /* SignalProducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducer.swift; sourceTree = "<group>"; };
+		D8F54C071C74247100FD6705 /* RequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +53,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D85795781C74371700C23AF2 /* Result.framework in Frameworks */,
+				D85795741C7436D000C23AF2 /* ReactiveCocoa.framework in Frameworks */,
+				D8B0029B1C74359A00542367 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +63,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8F54BE61C741CD800FD6705 /* ReactiveAlamofire.framework in Frameworks */,
+				D857957B1C74375400C23AF2 /* ReactiveAlamofire.framework in Frameworks */,
+				D857957A1C74371F00C23AF2 /* Result.framework in Frameworks */,
+				D85795761C7436DA00C23AF2 /* ReactiveCocoa.framework in Frameworks */,
+				D8B0029C1C7435A200542367 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +79,7 @@
 				D8F54BDD1C741CD800FD6705 /* ReactiveAlamofire */,
 				D8F54BE91C741CD800FD6705 /* ReactiveAlamofireTests */,
 				D8F54BDC1C741CD800FD6705 /* Products */,
+				D8F54C021C7422BB00FD6705 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +95,7 @@
 		D8F54BDD1C741CD800FD6705 /* ReactiveAlamofire */ = {
 			isa = PBXGroup;
 			children = (
+				D8F54BF61C741FA600FD6705 /* Core */,
 				D8F54BDE1C741CD800FD6705 /* ReactiveAlamofire.h */,
 				D8F54BE01C741CD800FD6705 /* Info.plist */,
 			);
@@ -80,10 +105,39 @@
 		D8F54BE91C741CD800FD6705 /* ReactiveAlamofireTests */ = {
 			isa = PBXGroup;
 			children = (
-				D8F54BEA1C741CD800FD6705 /* ReactiveAlamofireTests.swift */,
+				D8F54C061C74245700FD6705 /* Core */,
 				D8F54BEC1C741CD800FD6705 /* Info.plist */,
 			);
 			path = ReactiveAlamofireTests;
+			sourceTree = "<group>";
+		};
+		D8F54BF61C741FA600FD6705 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D8F54BF71C741FC200FD6705 /* Request.swift */,
+				D8F54BFA1C74203500FD6705 /* SignalProducer.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		D8F54C021C7422BB00FD6705 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D85795791C74371F00C23AF2 /* Result.framework */,
+				D85795771C74371700C23AF2 /* Result.framework */,
+				D85795751C7436DA00C23AF2 /* ReactiveCocoa.framework */,
+				D85795731C7436D000C23AF2 /* ReactiveCocoa.framework */,
+				D8B002991C74352700542367 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8F54C061C74245700FD6705 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D8F54C071C74247100FD6705 /* RequestTests.swift */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,9 +154,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D8F54BDA1C741CD800FD6705 /* ReactiveAlamofire */ = {
+		D8F54BDA1C741CD800FD6705 /* ReactiveAlamofire-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8F54BEF1C741CD800FD6705 /* Build configuration list for PBXNativeTarget "ReactiveAlamofire" */;
+			buildConfigurationList = D8F54BEF1C741CD800FD6705 /* Build configuration list for PBXNativeTarget "ReactiveAlamofire-iOS" */;
 			buildPhases = (
 				D8F54BD61C741CD800FD6705 /* Sources */,
 				D8F54BD71C741CD800FD6705 /* Frameworks */,
@@ -113,14 +167,14 @@
 			);
 			dependencies = (
 			);
-			name = ReactiveAlamofire;
+			name = "ReactiveAlamofire-iOS";
 			productName = ReactiveAlamofire;
 			productReference = D8F54BDB1C741CD800FD6705 /* ReactiveAlamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D8F54BE41C741CD800FD6705 /* ReactiveAlamofireTests */ = {
+		D8F54BE41C741CD800FD6705 /* ReactiveAlamofireTests-iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8F54BF21C741CD800FD6705 /* Build configuration list for PBXNativeTarget "ReactiveAlamofireTests" */;
+			buildConfigurationList = D8F54BF21C741CD800FD6705 /* Build configuration list for PBXNativeTarget "ReactiveAlamofireTests-iOSTests" */;
 			buildPhases = (
 				D8F54BE11C741CD800FD6705 /* Sources */,
 				D8F54BE21C741CD800FD6705 /* Frameworks */,
@@ -131,7 +185,7 @@
 			dependencies = (
 				D8F54BE81C741CD800FD6705 /* PBXTargetDependency */,
 			);
-			name = ReactiveAlamofireTests;
+			name = "ReactiveAlamofireTests-iOSTests";
 			productName = ReactiveAlamofireTests;
 			productReference = D8F54BE51C741CD800FD6705 /* ReactiveAlamofireTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -166,8 +220,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D8F54BDA1C741CD800FD6705 /* ReactiveAlamofire */,
-				D8F54BE41C741CD800FD6705 /* ReactiveAlamofireTests */,
+				D8F54BDA1C741CD800FD6705 /* ReactiveAlamofire-iOS */,
+				D8F54BE41C741CD800FD6705 /* ReactiveAlamofireTests-iOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -194,6 +248,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8F54BF81C741FC200FD6705 /* Request.swift in Sources */,
+				D8F54BFB1C74203500FD6705 /* SignalProducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +257,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8F54BEB1C741CD800FD6705 /* ReactiveAlamofireTests.swift in Sources */,
+				D8F54C081C74247100FD6705 /* RequestTests.swift in Sources */,
+				D8F54BF91C741FC200FD6705 /* Request.swift in Sources */,
+				D8F54BFC1C74203500FD6705 /* SignalProducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +268,7 @@
 /* Begin PBXTargetDependency section */
 		D8F54BE81C741CD800FD6705 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D8F54BDA1C741CD800FD6705 /* ReactiveAlamofire */;
+			target = D8F54BDA1C741CD800FD6705 /* ReactiveAlamofire-iOS */;
 			targetProxy = D8F54BE71C741CD800FD6705 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -253,9 +311,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.envoy.ReactiveAlamofire;
+				PRODUCT_NAME = ReactiveAlamofire;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -295,8 +355,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.envoy.ReactiveAlamofire;
+				PRODUCT_NAME = ReactiveAlamofire;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -308,31 +370,48 @@
 		D8F54BF01C741CD800FD6705 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Alamofire/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/ReactiveCocoa/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Result/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = ReactiveAlamofire/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.envoy.ReactiveAlamofire;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		D8F54BF11C741CD800FD6705 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Alamofire/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/ReactiveCocoa/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Result/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = ReactiveAlamofire/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.envoy.ReactiveAlamofire;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -340,20 +419,32 @@
 		D8F54BF31C741CD800FD6705 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/ReactiveCocoa/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Result/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = ReactiveAlamofireTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.envoy.ReactiveAlamofireTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReactiveAlamofireTests;
 			};
 			name = Debug;
 		};
 		D8F54BF41C741CD800FD6705 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/ReactiveCocoa/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Result/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = ReactiveAlamofireTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.envoy.ReactiveAlamofireTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReactiveAlamofireTests;
 			};
 			name = Release;
 		};
@@ -369,21 +460,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8F54BEF1C741CD800FD6705 /* Build configuration list for PBXNativeTarget "ReactiveAlamofire" */ = {
+		D8F54BEF1C741CD800FD6705 /* Build configuration list for PBXNativeTarget "ReactiveAlamofire-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8F54BF01C741CD800FD6705 /* Debug */,
 				D8F54BF11C741CD800FD6705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		D8F54BF21C741CD800FD6705 /* Build configuration list for PBXNativeTarget "ReactiveAlamofireTests" */ = {
+		D8F54BF21C741CD800FD6705 /* Build configuration list for PBXNativeTarget "ReactiveAlamofireTests-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8F54BF31C741CD800FD6705 /* Debug */,
 				D8F54BF41C741CD800FD6705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
