@@ -12,8 +12,11 @@
 import Alamofire
 import ReactiveCocoa
 import ReactiveAlamofire
+import Result
 
-Alamofire.request(.GET, "http://httpbin.org/get?foo=bar")
+SignalProducer<Request, NoError> { observer, _ in
+    observer.sendNext(Alamofire.request(.GET, "http://httpbin.org/get?foo=bar"))
+}
     .responseProducer()  // Make the Alamofire.Request to a ResponseProducer (SignalProducer)
     .parseResponse(Request.JSONResponseSerializer()) // Parse response with JSONResponseSerializer
     .startWithNext { resp in

@@ -10,6 +10,7 @@ import Foundation
 
 import Alamofire
 import ReactiveCocoa
+import Result
 
 extension Alamofire.Response: ErrorType {}
 
@@ -59,6 +60,18 @@ public extension SignalType where Value: ResponseProducerResultType, Error: Resp
     }
 }
 
+public extension SignalProducerType where Value: Alamofire.Request, Error == NoError {
+    /**
+        Make a SignalProducer for generating response from self request of SignalProducer and return
+         - Returns: A SignalProducer for generating response from request
+     */
+    func responseProducer() -> SignalProducer<ResponseProducerResult, ResponseProducerResult> {
+        return self
+            .promoteErrors(ResponseProducerResult)
+            .map { $0.responseProducer() }
+            .flatten(.Concat)
+    }
+}
 
 public extension SignalProducerType where Value: ResponseProducerResultType, Error: ResponseProducerResultType {
     /**
