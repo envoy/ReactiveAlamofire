@@ -17,7 +17,7 @@ import Result
 SignalProducer<Request, NoError> { observer, _ in
     observer.sendNext(Alamofire.request(.GET, "http://httpbin.org/get?foo=bar"))
 }
-    .responseProducer()  // Make the Request SignalProducer to a Response SignalProducer
+    .responseProducer()  // Make the Request SignalProducer to be a Response SignalProducer
     .parseResponse(Request.JSONResponseSerializer()) // Parse response with JSONResponseSerializer
     .startWithNext { resp in
         print(resp.result.value)
