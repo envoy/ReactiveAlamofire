@@ -62,14 +62,23 @@ public extension SignalType where Value: ResponseProducerResultType, Error: Resp
 
 public extension SignalProducerType where Value: Alamofire.Request, Error == NoError {
     /**
-        Make a SignalProducer for generating response from self request of SignalProducer and return
-         - Returns: A SignalProducer for generating response from request
+        Make a SignalProducer for generating response SignalProducer from self request of SignalProducer and return
+         - Returns: A SignalProducer for generating response SignalProducer from request
      */
-    func responseProducer() -> SignalProducer<ResponseProducerResult, ResponseProducerResult> {
+    func metaResponseProducer() -> SignalProducer<SignalProducer<ResponseProducerResult, ResponseProducerResult>, ResponseProducerResult> {
         return self
             .promoteErrors(ResponseProducerResult)
             .map { $0.responseProducer() }
-            .flatten(.Concat)
+    }
+    
+    /**
+        Make a SignalProducer for generating response from self request of SignalProducer and return
+         - Returns: A SignalProducer for generating response from request
+     */
+    func responseProducer(strategy: ReactiveCocoa.FlattenStrategy = .Concat) -> SignalProducer<ResponseProducerResult, ResponseProducerResult> {
+        return self
+            .metaResponseProducer()
+            .flatten(strategy)
     }
 }
 

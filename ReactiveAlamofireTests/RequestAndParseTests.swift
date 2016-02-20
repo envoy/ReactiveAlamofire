@@ -77,4 +77,29 @@ class RequestAndParseTests: XCTestCase {
         
         XCTAssertEqual(results, [["foo": "bar"], ["egg": "spam"]])
     }
+
+    func testRequestProducerToResponseProducerWithMerging() {
+        let num = 10
+        var exps = (0..<num).map { expectationWithDescription("get \($0)st response") }
+        let requests = (0..<num).map { Alamofire.request(.GET, "http://httpbin.org/get?req=\($0)") }
+        var results: Set<Int> = []
+        SignalProducer(values: requests)
+            .responseProducer(.Merge)
+            .parseResponse(Request.JSONResponseSerializer())
+            .startWithNext { result in
+                XCTAssertNotNil(result.data)
+                XCTAssertNotNil(result.request)
+                XCTAssertNotNil(result.response)
+                XCTAssertTrue(result.result.isSuccess)
+                let dict = result.result.value! as! [String: AnyObject]
+                let exp = exps.removeLast()
+                exp.fulfill()
+                let numStr = ((dict["args"]! as? [String: String])?["req"])! as String
+                results.insert(Int(numStr)!)
+        }
+        waitForExpectationsWithTimeout(10, handler: nil)
+        
+        let expectedNumbers: Set<Int> = Set<Int>(0..<num)
+        XCTAssertEqual(results, expectedNumbers)
+    }
 }
