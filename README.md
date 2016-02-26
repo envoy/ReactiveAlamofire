@@ -46,3 +46,10 @@ here comes the output
 voilà!
 
 You can call `responseProducer(responseSerializer: ResponseSerializerType)` with any `ResponseSerializer` for `Alamofire` to parse the response.
+
+
+## Install with Carthage
+
+To install with [Carthage](https://github.com/Carthage/Carthage), add ReactiveAlamofire to your Cartfile:
+
+github "envoy/ReactiveAlamofire"
