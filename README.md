@@ -52,4 +52,6 @@ You can call `responseProducer(responseSerializer: ResponseSerializerType)` with
 
 To install with [Carthage](https://github.com/Carthage/Carthage), add ReactiveAlamofire to your Cartfile:
 
+```
 github "envoy/ReactiveAlamofire"
+```
