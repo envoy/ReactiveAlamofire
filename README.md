@@ -55,3 +55,11 @@ To install with [Carthage](https://github.com/Carthage/Carthage), add ReactiveAl
 ```
 github "envoy/ReactiveAlamofire"
 ```
+
+## Install with CocoaPod
+
+To install with [CocoaPod](https://cocoapods.org), add ReactiveAlamofire to your Podfile:
+
+```
+pod 'ReactiveAlamofire', '~> 1.0.0-alpha.2'
+```
