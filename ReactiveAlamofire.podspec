@@ -4,6 +4,7 @@ Pod::Spec.new do |spec|
   spec.summary      = 'Alamofire 3 integration for ReactiveCocoa 4'
   spec.homepage     = 'https://github.com/envoy/ReactiveAlamofire'
   spec.license      = 'MIT'
+  spec.license      = { type: 'MIT', file: 'LICENSE' }
   spec.author             = { 'Victor' => 'victor@envoy.com' }
   spec.social_media_url   = 'http://twitter.com/victorlin'
   spec.platform     = :ios, '8.0'
