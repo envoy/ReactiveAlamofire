@@ -51,6 +51,7 @@ public extension Alamofire.Request {
         Make a SignalProducer for generating response from `self` request and return
          - Returns: A SignalProducer for generating response from request
      */
+    @warn_unused_result(message="Did you forget to call `start` on the producer?")
     func responseProducer() -> SignalProducer<ResponseProducerResult, ResponseProducerResult> {
         return SignalProducer<ResponseProducerResult, ResponseProducerResult> { observer, disposable in
             switch self.task.state {
