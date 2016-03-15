@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'ReactiveAlamofire'
-  spec.version      = '1.0.0-alpha.2'
+  spec.version      = '1.0.0'
   spec.summary      = 'Alamofire 3 integration for ReactiveCocoa 4'
   spec.homepage     = 'https://github.com/envoy/ReactiveAlamofire'
   spec.license      = 'MIT'
@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, '8.0'
   spec.source       = {
     git: 'https://github.com/envoy/ReactiveAlamofire.git',
-    tag: 'v1.0.0-alpha.2'
+    tag: 'v1.0.0'
   }
   spec.source_files = 'ReactiveAlamofire/*.swift'
   spec.dependency 'ReactiveCocoa', '~> 4.0'
