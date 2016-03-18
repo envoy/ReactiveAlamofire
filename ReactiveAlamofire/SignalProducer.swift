@@ -60,7 +60,7 @@ public extension SignalType where Value: ResponseProducerResultType, Error: Resp
     }
 }
 
-public extension SignalProducerType where Value: Alamofire.Request, Error == NoError {
+public extension SignalProducerType where Value: Alamofire.Request, Error == ReactiveCocoa.NoError {
     /**
         Make a SignalProducer for generating response SignalProducer from self request of SignalProducer and return
          - Returns: A SignalProducer for generating response SignalProducer from request
@@ -71,7 +71,7 @@ public extension SignalProducerType where Value: Alamofire.Request, Error == NoE
             .promoteErrors(ResponseProducerResult)
             .map { $0.responseProducer() }
     }
-    
+
     /**
         Make a SignalProducer for generating response from self request of SignalProducer and return
          - Returns: A SignalProducer for generating response from request

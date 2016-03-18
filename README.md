@@ -14,7 +14,7 @@ import ReactiveCocoa
 import ReactiveAlamofire
 import Result
 
-SignalProducer<Request, NoError> { observer, _ in
+SignalProducer<Request, ReactiveCocoa.NoError> { observer, _ in
     observer.sendNext(Alamofire.request(.GET, "http://httpbin.org/get?foo=bar"))
 }
     .responseProducer()  // Make the Request SignalProducer to be a Response SignalProducer
@@ -61,5 +61,5 @@ github "envoy/ReactiveAlamofire"
 To install with [CocoaPod](https://cocoapods.org), add ReactiveAlamofire to your Podfile:
 
 ```
-pod 'ReactiveAlamofire', '~> 1.0.0-alpha.2'
+pod 'ReactiveAlamofire', '~> 1.0'
 ```
