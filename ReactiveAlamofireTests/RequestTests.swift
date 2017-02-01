@@ -13,7 +13,7 @@ import ReactiveCocoa
 
 class RequestTests: XCTestCase {
     func testResponseProducer() {
-        let exp = expectationWithDescription("get response")
+        let exp = expectation(description: "get response")
         Alamofire.request(.GET, "http://httpbin.org/get")
             .responseProducer()
             .startWithNext { result in
@@ -23,7 +23,7 @@ class RequestTests: XCTestCase {
                 XCTAssertNil(result.error)
                 exp.fulfill()
         }
-        waitForExpectationsWithTimeout(3, handler: nil)
+        waitForExpectations(timeout: 3, handler: nil)
     }
 
 }

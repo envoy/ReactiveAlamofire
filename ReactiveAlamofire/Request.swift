@@ -19,21 +19,21 @@ import ReactiveCocoa
 
 /// Type for ResponseProducer result
 public protocol ResponseProducerResultType {
-    var request: NSURLRequest? { get }
-    var response: NSHTTPURLResponse? { get }
-    var data: NSData? { get }
+    var request: URLRequest? { get }
+    var response: HTTPURLResponse? { get }
+    var data: Data? { get }
     var error: NSError? { get }
-    init(request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?)
+    init(request: URLRequest?, response: HTTPURLResponse?, data: Data?, error: NSError?)
 }
 
 /// Object for response producer result
-public class ResponseProducerResult: ResponseProducerResultType {
-    public var request: NSURLRequest?
-    public var response: NSHTTPURLResponse?
-    public var data: NSData?
-    public var error: NSError?
+open class ResponseProducerResult: ResponseProducerResultType {
+    open var request: URLRequest?
+    open var response: HTTPURLResponse?
+    open var data: Data?
+    open var error: NSError?
     
-    required public init(request: NSURLRequest?, response: NSHTTPURLResponse?, data: NSData?, error: NSError?) {
+    required public init(request: URLRequest?, response: HTTPURLResponse?, data: Data?, error: NSError?) {
         self.request = request
         self.response = response
         self.data = data
@@ -41,7 +41,7 @@ public class ResponseProducerResult: ResponseProducerResultType {
     }
 }
 
-extension ResponseProducerResult: ErrorType {}
+extension ResponseProducerResult: Error {}
 
 public extension Alamofire.Request {
     /// Producer for generating response
@@ -51,7 +51,7 @@ public extension Alamofire.Request {
         Make a SignalProducer for generating response from `self` request and return
          - Returns: A SignalProducer for generating response from request
      */
-    @warn_unused_result(message="Did you forget to call `start` on the producer?")
+    
     func responseProducer() -> SignalProducer<ResponseProducerResult, ResponseProducerResult> {
         return SignalProducer<ResponseProducerResult, ResponseProducerResult> { observer, disposable in
             switch self.task.state {

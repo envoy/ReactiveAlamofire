@@ -20,8 +20,8 @@ public extension SignalType where Value: ResponseProducerResultType, Error: Resp
          - Parameter responseSerializer: the response serializer to apply on response from self signal
          - Returns: A Signal which produces Alamofire.Response with the desired format
      */
-    @warn_unused_result(message="Did you forget to call `observe` on the signal?")
-    func parseResponse<T: ResponseSerializerType>(responseSerializer: T) -> Signal<Alamofire.Response<T.SerializedObject, T.ErrorObject>, Alamofire.Response<T.SerializedObject, T.ErrorObject>> {
+    
+    func parseResponse<T: ResponseSerializerType>(_ responseSerializer: T) -> Signal<Alamofire.Response<T.SerializedObject, T.ErrorObject>, Alamofire.Response<T.SerializedObject, T.ErrorObject>> {
         return Signal { observer in
             return self.observe { event in
                 var respValue: ResponseProducerResultType!
@@ -65,7 +65,7 @@ public extension SignalProducerType where Value: Alamofire.Request, Error == NoE
         Make a SignalProducer for generating response SignalProducer from self request of SignalProducer and return
          - Returns: A SignalProducer for generating response SignalProducer from request
      */
-    @warn_unused_result(message="Did you forget to call `start` on the producer?")
+    
     func metaResponseProducer() -> SignalProducer<SignalProducer<ResponseProducerResult, ResponseProducerResult>, ResponseProducerResult> {
         return self
             .promoteErrors(ResponseProducerResult)
@@ -76,8 +76,8 @@ public extension SignalProducerType where Value: Alamofire.Request, Error == NoE
         Make a SignalProducer for generating response from self request of SignalProducer and return
          - Returns: A SignalProducer for generating response from request
      */
-    @warn_unused_result(message="Did you forget to call `start` on the producer?")
-    func responseProducer(strategy: ReactiveCocoa.FlattenStrategy = .Concat) -> SignalProducer<ResponseProducerResult, ResponseProducerResult> {
+    
+    func responseProducer(_ strategy: ReactiveCocoa.FlattenStrategy = .Concat) -> SignalProducer<ResponseProducerResult, ResponseProducerResult> {
         return self
             .metaResponseProducer()
             .flatten(strategy)
@@ -90,8 +90,8 @@ public extension SignalProducerType where Value: ResponseProducerResultType, Err
          - Parameter responseSerializer: the response serializer to apply on responses from `self` SignalProducer
          - Returns: A SignalProducer which produces Alamofire.Response with the desired format
      */
-    @warn_unused_result(message="Did you forget to call `start` on the producer?")
-    func parseResponse<T: ResponseSerializerType>(responseSerializer: T) -> SignalProducer<Alamofire.Response<T.SerializedObject, T.ErrorObject>, Alamofire.Response<T.SerializedObject, T.ErrorObject>> {
+    
+    func parseResponse<T: ResponseSerializerType>(_ responseSerializer: T) -> SignalProducer<Alamofire.Response<T.SerializedObject, T.ErrorObject>, Alamofire.Response<T.SerializedObject, T.ErrorObject>> {
         return self.lift { signal in
             return signal.parseResponse(responseSerializer)
         }

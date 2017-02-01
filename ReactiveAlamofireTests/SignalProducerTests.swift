@@ -22,11 +22,11 @@ class SignalProducerTests: XCTestCase {
                 result = value
         }
         
-        let data = "data".dataUsingEncoding(NSUTF8StringEncoding)!
-        let response = NSHTTPURLResponse(
-            URL: NSURL(string: "https://httpbin.org/get")!,
+        let data = "data".data(using: String.Encoding.utf8)!
+        let response = HTTPURLResponse(
+            url: URL(string: "https://httpbin.org/get")!,
             statusCode: 200,
-            HTTPVersion: "HTTP/1.1",
+            httpVersion: "HTTP/1.1",
             headerFields: ["Content-Type": "image/jpeg; charset=utf-8"]
         )
         
@@ -45,11 +45,11 @@ class SignalProducerTests: XCTestCase {
                 result = value
         }
         
-        let data = "{\"foo\": \"bar\"}".dataUsingEncoding(NSUTF8StringEncoding)!
-        let response = NSHTTPURLResponse(
-            URL: NSURL(string: "https://httpbin.org/get")!,
+        let data = "{\"foo\": \"bar\"}".data(using: String.Encoding.utf8)!
+        let response = HTTPURLResponse(
+            url: URL(string: "https://httpbin.org/get")!,
             statusCode: 200,
-            HTTPVersion: "HTTP/1.1",
+            httpVersion: "HTTP/1.1",
             headerFields: ["Content-Type": "application/json; charset=utf-8"]
         )
         
@@ -63,11 +63,11 @@ class SignalProducerTests: XCTestCase {
         let (signal, observer) = Signal<ResponseProducerResult, ResponseProducerResult>.pipe()
         let result = AnyProperty(initialValue: [], signal: signal.parseResponse(Request.JSONResponseSerializer()).materialize().collect())
         
-        let data = "{".dataUsingEncoding(NSUTF8StringEncoding)!
-        let response = NSHTTPURLResponse(
-            URL: NSURL(string: "https://httpbin.org/get")!,
+        let data = "{".data(using: String.Encoding.utf8)!
+        let response = HTTPURLResponse(
+            url: URL(string: "https://httpbin.org/get")!,
             statusCode: 200,
-            HTTPVersion: "HTTP/1.1",
+            httpVersion: "HTTP/1.1",
             headerFields: ["Content-Type": "application/json; charset=utf-8"]
         )
         

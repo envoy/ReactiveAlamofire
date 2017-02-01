@@ -14,7 +14,7 @@ import Result
 
 class RequestAndParseTests: XCTestCase {
     func testResponseProducerWithJSONParsing() {
-        let exp = expectationWithDescription("get response")
+        let exp = expectation(description: "get response")
         Alamofire.request(.GET, "http://httpbin.org/get?foo=bar")
             .responseProducer()
             .parseResponse(Request.JSONResponseSerializer())
@@ -27,11 +27,11 @@ class RequestAndParseTests: XCTestCase {
                 XCTAssertEqual(dict["args"] as! [String: String], ["foo": "bar"])
                 exp.fulfill()
         }
-        waitForExpectationsWithTimeout(3, handler: nil)
+        waitForExpectations(timeout: 3, handler: nil)
     }
 
     func testRequestProducerToResponseProducerWithJSONParsing() {
-        let exp = expectationWithDescription("get response")
+        let exp = expectation(description: "get response")
         SignalProducer<Request, NoError> { observer, _ in
             let req = Alamofire.request(.GET, "http://httpbin.org/get?foo=bar")
             observer.sendNext(req)
@@ -47,12 +47,12 @@ class RequestAndParseTests: XCTestCase {
                 XCTAssertEqual(dict["args"] as! [String: String], ["foo": "bar"])
                 exp.fulfill()
         }
-        waitForExpectationsWithTimeout(3, handler: nil)
+        waitForExpectations(timeout: 3, handler: nil)
     }
 
     func testRequestProducerToResponseProducerWithMultipleReq() {
-        let exp0 = expectationWithDescription("get 1st response")
-        let exp1 = expectationWithDescription("get 2nd response")
+        let exp0 = expectation(description: "get 1st response")
+        let exp1 = expectation(description: "get 2nd response")
         var results: [[String: String]] = []
         SignalProducer(values: [
             Alamofire.request(.GET, "http://httpbin.org/get?foo=bar"),
@@ -73,14 +73,14 @@ class RequestAndParseTests: XCTestCase {
                 }
                 results.append(dict["args"] as! [String: String])
         }
-        waitForExpectationsWithTimeout(3, handler: nil)
+        waitForExpectations(timeout: 3, handler: nil)
         
         XCTAssertEqual(results, [["foo": "bar"], ["egg": "spam"]])
     }
 
     func testRequestProducerToResponseProducerWithMerging() {
         let num = 10
-        var exps = (0..<num).map { expectationWithDescription("get \($0)st response") }
+        var exps = (0..<num).map { expectation(description: "get \($0)st response") }
         let requests = (0..<num).map { Alamofire.request(.GET, "http://httpbin.org/get?req=\($0)") }
         var results: Set<Int> = []
         SignalProducer(values: requests)
@@ -97,7 +97,7 @@ class RequestAndParseTests: XCTestCase {
                 let numStr = ((dict["args"]! as? [String: String])?["req"])! as String
                 results.insert(Int(numStr)!)
         }
-        waitForExpectationsWithTimeout(10, handler: nil)
+        waitForExpectations(timeout: 10, handler: nil)
         
         let expectedNumbers: Set<Int> = Set<Int>(0..<num)
         XCTAssertEqual(results, expectedNumbers)
