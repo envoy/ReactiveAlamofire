@@ -60,7 +60,7 @@ public extension SignalProtocol where Value: ResponseProducerResultType, Error: 
     }
 }
 
-public extension SignalProducerProtocol where Value: Alamofire.DataRequest, Error == NoError {
+public extension SignalProducerProtocol where Value: Alamofire.Request, Error == NoError {
     /**
         Make a SignalProducer for generating response SignalProducer from self request of SignalProducer and return
          - Returns: A SignalProducer for generating response SignalProducer from request
@@ -68,8 +68,8 @@ public extension SignalProducerProtocol where Value: Alamofire.DataRequest, Erro
     
     func metaResponseProducer() -> SignalProducer<SignalProducer<ResponseProducerResult, ResponseProducerResult>, ResponseProducerResult> {
         return self
-            .promoteErrors(ResponseProducerResult)
-            .map { $0.responseProducer() }
+            .promoteErrors(ResponseProducerResult.self)
+            .map { _ in self.responseProducer() }
     }
     
     /**
