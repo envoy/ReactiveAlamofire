@@ -12,7 +12,7 @@ import Alamofire
 import ReactiveCocoa
 import Result
 
-extension Alamofire.Response: ErrorType {}
+extension Alamofire.DataResponse: Error {}
 
 public extension SignalType where Value: ResponseProducerResultType, Error: ResponseProducerResultType {
     /**

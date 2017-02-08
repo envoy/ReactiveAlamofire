@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130F03FD1E4B939B00DF9B8C /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130F03FA1E4B92EE00DF9B8C /* ReactiveSwift.framework */; };
 		D85795741C7436D000C23AF2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85795731C7436D000C23AF2 /* ReactiveCocoa.framework */; };
 		D85795761C7436DA00C23AF2 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85795751C7436DA00C23AF2 /* ReactiveCocoa.framework */; };
 		D85795781C74371700C23AF2 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85795771C74371700C23AF2 /* Result.framework */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		130F03FA1E4B92EE00DF9B8C /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		D85795731C7436D000C23AF2 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "Carthage/Checkouts/ReactiveCocoa/build/Debug-iphoneos/ReactiveCocoa.framework"; sourceTree = "<group>"; };
 		D85795751C7436DA00C23AF2 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "Carthage/Checkouts/ReactiveCocoa/build/Debug-iphoneos/ReactiveCocoa.framework"; sourceTree = "<group>"; };
 		D85795771C74371700C23AF2 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			files = (
 				D85795781C74371700C23AF2 /* Result.framework in Frameworks */,
 				D85795741C7436D000C23AF2 /* ReactiveCocoa.framework in Frameworks */,
+				130F03FD1E4B939B00DF9B8C /* ReactiveSwift.framework in Frameworks */,
 				D8B0029B1C74359A00542367 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +139,7 @@
 		D8F54C021C7422BB00FD6705 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				130F03FA1E4B92EE00DF9B8C /* ReactiveSwift.framework */,
 				D85795791C74371F00C23AF2 /* Result.framework */,
 				D85795771C74371700C23AF2 /* Result.framework */,
 				D85795751C7436DA00C23AF2 /* ReactiveCocoa.framework */,
@@ -176,6 +180,7 @@
 				D8F54BD71C741CD800FD6705 /* Frameworks */,
 				D8F54BD81C741CD800FD6705 /* Headers */,
 				D8F54BD91C741CD800FD6705 /* Resources */,
+				130F03F91E4B922B00DF9B8C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -258,6 +263,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		130F03F91E4B922B00DF9B8C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D8F54BD61C741CD800FD6705 /* Sources */ = {
