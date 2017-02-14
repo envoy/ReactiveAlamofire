@@ -9,17 +9,17 @@
 import XCTest
 
 import Alamofire
-import ReactiveCocoa
+import ReactiveSwift
 
 class SignalProducerTests: XCTestCase {
 
     func testSignalParseResponseWithStringSerializer() {
         let (signal, observer) = Signal<ResponseProducerResult, ResponseProducerResult>.pipe()
-        var result: Alamofire.Response<String, NSError>?
+        var result: DataResponse<String>?
         signal
-            .parseResponse(Request.stringResponseSerializer())
-            .observeNext { value in
-                result = value
+            .parseResponse(DataRequest.stringResponseSerializer())
+            .observeResult { value in
+                result = value.value
         }
         
         let data = "data".data(using: String.Encoding.utf8)!
@@ -30,19 +30,19 @@ class SignalProducerTests: XCTestCase {
             headerFields: ["Content-Type": "image/jpeg; charset=utf-8"]
         )
         
-        observer.sendNext(ResponseProducerResult(request: nil, response: response, data: data, error: nil))
-        
+        observer.send(value: ResponseProducerResult(request: nil, response: response, data: data, error: nil))
+
         XCTAssertTrue(result!.result.isSuccess)
         XCTAssertEqual(result!.result.value, "data")
     }
     
     func testSignalParseResponseWithJSONSerializer() {
         let (signal, observer) = Signal<ResponseProducerResult, ResponseProducerResult>.pipe()
-        var result: Alamofire.Response<AnyObject, NSError>?
+        var result: DataResponse<Any>?
         signal
-            .parseResponse(Request.JSONResponseSerializer())
-            .observeNext { value in
-                result = value
+            .parseResponse(DataRequest.jsonResponseSerializer())
+            .observeResult { value in
+                result = value.value
         }
         
         let data = "{\"foo\": \"bar\"}".data(using: String.Encoding.utf8)!
@@ -53,7 +53,7 @@ class SignalProducerTests: XCTestCase {
             headerFields: ["Content-Type": "application/json; charset=utf-8"]
         )
         
-        observer.sendNext(ResponseProducerResult(request: nil, response: response, data: data, error: nil))
+        observer.send(value: ResponseProducerResult(request: nil, response: response, data: data, error: nil))
         
         XCTAssertTrue(result!.result.isSuccess)
         XCTAssertEqual(result!.result.value as! [String: String], ["foo": "bar"])
@@ -61,7 +61,7 @@ class SignalProducerTests: XCTestCase {
     
     func testSignalParseResponseWithJSONSerializerAndBadJSONData() {
         let (signal, observer) = Signal<ResponseProducerResult, ResponseProducerResult>.pipe()
-        let result = AnyProperty(initialValue: [], signal: signal.parseResponse(Request.JSONResponseSerializer()).materialize().collect())
+        let result = Property(initial: [], then: signal.parseResponse(DataRequest.jsonResponseSerializer()).materialize().collect())
         
         let data = "{".data(using: String.Encoding.utf8)!
         let response = HTTPURLResponse(
@@ -71,7 +71,7 @@ class SignalProducerTests: XCTestCase {
             headerFields: ["Content-Type": "application/json; charset=utf-8"]
         )
         
-        observer.sendNext(ResponseProducerResult(request: nil, response: response, data: data, error: nil))
+        observer.send(value: ResponseProducerResult(request: nil, response: response, data: data, error: nil))
         observer.sendCompleted()
         
         XCTAssertEqual(result.value.count, 1)

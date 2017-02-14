@@ -198,6 +198,7 @@
 				D8F54BE11C741CD800FD6705 /* Sources */,
 				D8F54BE21C741CD800FD6705 /* Frameworks */,
 				D8F54BE31C741CD800FD6705 /* Resources */,
+				91029D3E1E533C1D00431AB9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -266,6 +267,22 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 		130F03F91E4B922B00DF9B8C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		91029D3E1E533C1D00431AB9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
