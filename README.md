@@ -4,7 +4,7 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/envoy/ReactiveAlamofire)
 [![GitHub license](https://img.shields.io/github/license/envoy/ReactiveAlamofire.svg)](https://github.com/envoy/ReactiveAlamofire/blob/master/LICENSE)
 
-[Alamofire](https://github.com/Alamofire/Alamofire) 3 integration for [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa) 4
+[Alamofire](https://github.com/Alamofire/Alamofire) 4 integration for [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa) 5
 
 ## Example
 
@@ -61,5 +61,5 @@ github "envoy/ReactiveAlamofire"
 To install with [CocoaPod](https://cocoapods.org), add ReactiveAlamofire to your Podfile:
 
 ```
-pod 'ReactiveAlamofire', '~> 1.0.0-alpha.2'
+pod 'ReactiveAlamofire', '~> 2.0.0'
 ```
