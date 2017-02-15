@@ -9,21 +9,22 @@
 import XCTest
 
 import Alamofire
-import ReactiveCocoa
+import ReactiveSwift
 
 class RequestTests: XCTestCase {
     func testResponseProducer() {
-        let exp = expectationWithDescription("get response")
-        Alamofire.request(.GET, "http://httpbin.org/get")
+        let exp = expectation(description: "get response")
+        Alamofire.request("http://httpbin.org/get")
             .responseProducer()
-            .startWithNext { result in
-                XCTAssertNotNil(result.data)
-                XCTAssertNotNil(result.request)
-                XCTAssertNotNil(result.response)
+            .startWithResult { result in
+                XCTAssertNotNil(result.value)
+                XCTAssertNotNil(result.value!.data)
+                XCTAssertNotNil(result.value!.request)
+                XCTAssertNotNil(result.value!.response)
                 XCTAssertNil(result.error)
                 exp.fulfill()
         }
-        waitForExpectationsWithTimeout(3, handler: nil)
+        waitForExpectations(timeout: 3, handler: nil)
     }
 
 }

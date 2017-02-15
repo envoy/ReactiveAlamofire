@@ -4,23 +4,28 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/envoy/ReactiveAlamofire)
 [![GitHub license](https://img.shields.io/github/license/envoy/ReactiveAlamofire.svg)](https://github.com/envoy/ReactiveAlamofire/blob/master/LICENSE)
 
-[Alamofire](https://github.com/Alamofire/Alamofire) 3 integration for [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa) 4
+[Alamofire](https://github.com/Alamofire/Alamofire) 4 integration for [ReactiveSwift](https://github.com/ReactiveCocoa/ReactiveSwift)
 
 ## Example
 
 ```Swift
 import Alamofire
-import ReactiveCocoa
+import ReactiveSwift
 import ReactiveAlamofire
 import Result
 
-SignalProducer<Request, NoError> { observer, _ in
-    observer.sendNext(Alamofire.request(.GET, "http://httpbin.org/get?foo=bar"))
+SignalProducer<DataRequest, NoError>.attempt {
+    return .success(Alamofire.request("http://httpbin.org/get?foo=bar"))
 }
     .responseProducer()  // Make the Request SignalProducer to be a Response SignalProducer
-    .parseResponse(Request.JSONResponseSerializer()) // Parse response with JSONResponseSerializer
-    .startWithNext { resp in
-        print(resp.result.value)
+    .parseResponse(DataRequest.jsonResponseSerializer()) // Parse response with JSONResponseSerializer
+    .startWithResult { result in
+        switch result {
+        case .failure(let error):
+            print("failed, error=\(error)")
+        case .success(let resp):
+            print(resp.result.value ?? "No data")
+        }
     }
 ```
 
@@ -61,5 +66,5 @@ github "envoy/ReactiveAlamofire"
 To install with [CocoaPod](https://cocoapods.org), add ReactiveAlamofire to your Podfile:
 
 ```
-pod 'ReactiveAlamofire', '~> 1.0.0-alpha.2'
+pod 'ReactiveAlamofire', '~> 2.0.0'
 ```
