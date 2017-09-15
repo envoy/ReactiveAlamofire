@@ -23,7 +23,7 @@ public extension SignalProtocol where Value: ResponseProducerResultType, Error: 
     
     func parseResponse<T: DataResponseSerializerProtocol>(_ responseSerializer: T) -> Signal<Alamofire.DataResponse<T.SerializedObject>, Alamofire.DataResponse<T.SerializedObject>> {
         return Signal { observer in
-            return self.observe { event in
+            return self.signal.observe { event in
                 var respValue: ResponseProducerResultType!
                 switch event {
                 case .interrupted:
@@ -67,8 +67,8 @@ public extension SignalProducerProtocol where Value: Alamofire.DataRequest, Erro
      */
     
     func metaResponseProducer() -> SignalProducer<SignalProducer<ResponseProducerResult, ResponseProducerResult>, ResponseProducerResult> {
-        return self
-            .promoteErrors(ResponseProducerResult.self)
+        return self.producer
+            .promoteError(ResponseProducerResult.self)
             .map { $0.responseProducer() }
     }
     
@@ -92,7 +92,7 @@ public extension SignalProducerProtocol where Value: ResponseProducerResultType,
      */
     
     func parseResponse<T: DataResponseSerializerProtocol>(_ responseSerializer: T) -> SignalProducer<Alamofire.DataResponse<T.SerializedObject>, Alamofire.DataResponse<T.SerializedObject>> {
-        return self.lift { signal in
+        return self.producer.lift { signal in
             return signal.parseResponse(responseSerializer)
         }
     }
