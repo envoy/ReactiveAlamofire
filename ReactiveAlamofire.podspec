@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
   spec.license      = 'MIT'
   spec.license      = { type: 'MIT', file: 'LICENSE' }
   spec.author             = { 'Fang-Pen Lin' => 'fang@envoy.com' }
-  spec.social_media_url   = 'http://twitter.com/fangpenlin'
+  spec.social_media_url   = 'https://twitter.com/fangpenlin'
   spec.platform     = :ios, '9.0'
   spec.source       = {
     git: 'https://github.com/envoy/ReactiveAlamofire.git',
