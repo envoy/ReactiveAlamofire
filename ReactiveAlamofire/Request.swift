@@ -77,7 +77,7 @@ public extension Alamofire.DataRequest {
                 observer.send(value: resp)
                 observer.sendCompleted()
             }
-            disposable.add {
+            disposable.observeEnded {
                 self.cancel()
             }
         }
