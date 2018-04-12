@@ -22,7 +22,7 @@ public extension SignalProtocol where Value: ResponseProducerResultType, Error: 
      */
     
     func parseResponse<T: DataResponseSerializerProtocol>(_ responseSerializer: T) -> Signal<Alamofire.DataResponse<T.SerializedObject>, Alamofire.DataResponse<T.SerializedObject>> {
-        return Signal { observer in
+        return Signal<Alamofire.DataResponse<T.SerializedObject>, Alamofire.DataResponse<T.SerializedObject>> { (observer: Signal<Alamofire.DataResponse<T.SerializedObject>, Alamofire.DataResponse<T.SerializedObject>>.Observer, lifetime: Lifetime) in
             return self.signal.observe { event in
                 var respValue: ResponseProducerResultType!
                 switch event {
