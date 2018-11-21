@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'ReactiveAlamofire'
-  spec.version      = '4.0.0'
+  spec.version      = '4.0.1'
   spec.summary      = 'Alamofire 4.5 integration for ReactiveSwift 3'
   spec.homepage     = 'https://github.com/envoy/ReactiveAlamofire'
   spec.license      = 'MIT'
