@@ -27,10 +27,10 @@ public extension SignalProtocol where Value: ResponseProducerResultType, Error: 
                 var respValue: ResponseProducerResultType!
                 switch event {
                 case .interrupted:
-                    observer.sendInterrupted()
+                    observer.0.sendInterrupted()
                     return
                 case .completed:
-                    observer.sendCompleted()
+                    observer.0.sendCompleted()
                     return
                 case .value(let value):
                     respValue = value
@@ -51,9 +51,9 @@ public extension SignalProtocol where Value: ResponseProducerResultType, Error: 
                     result: result
                 )
                 if (result.isSuccess) {
-                    observer.send(value: resp)
+                    observer.0.send(value: resp)
                 } else {
-                    observer.send(error: resp)
+                    observer.0.send(error: resp)
                 }
             }
         }
