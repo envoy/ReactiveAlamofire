@@ -13,6 +13,6 @@ Pod::Spec.new do |spec|
     tag: 'v3.0.0'
   }
   spec.source_files = 'ReactiveAlamofire/*.swift'
-  spec.dependency 'ReactiveSwift', '~> 3.0'
+  spec.dependency 'ReactiveSwift', '~> 4.0'
   spec.dependency 'Alamofire', '~> 4.5'
 end
