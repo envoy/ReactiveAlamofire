@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'ReactiveAlamofire'
-  spec.version      = '4.0.0'
+  spec.version      = '4.0.1'
   spec.summary      = 'Alamofire 4.5 integration for ReactiveSwift 3'
   spec.homepage     = 'https://github.com/envoy/ReactiveAlamofire'
   spec.license      = 'MIT'
@@ -13,6 +13,6 @@ Pod::Spec.new do |spec|
     tag: 'v3.0.0'
   }
   spec.source_files = 'ReactiveAlamofire/*.swift'
-  spec.dependency 'ReactiveSwift', '~> 3.0'
+  spec.dependency 'ReactiveSwift', '~> 4.0'
   spec.dependency 'Alamofire', '~> 4.5'
 end
